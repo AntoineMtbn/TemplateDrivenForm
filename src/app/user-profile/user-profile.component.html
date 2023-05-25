@@ -1,1 +1,16 @@
-<p>user-profile works!</p>
+<!--<p>user-profile works!</p>-->
+<div class="mainForm">
+<img [src]="user.photo" [alt]="user.firstName+user.name">
+
+<h2>Nom : {{user.name}}</h2>
+<h2>Prénom : {{user.firstName}}</h2>
+
+<h2 *ngIf="viewAge">Âge : {{user.age}}</h2>
+
+<q>{{user.quote}}</q>
+<input type="text" placeholder="Editer la citation" [(ngModel)]="user.quote">
+
+</div>
+<button (click)="displayAge()">
+            {{viewAge ? "Masquer" : "Afficher"}} l'âge
+</button>
