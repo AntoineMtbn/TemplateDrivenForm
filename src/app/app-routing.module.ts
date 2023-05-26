@@ -3,10 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
+import { MyFormComponent } from './my-form/my-form.component';
 
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
-import { SignupComponent } from './signup/signup.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const ROUTES: Routes = [
   //{ path: 'home', component: HomeComponent },
@@ -15,7 +16,16 @@ const ROUTES: Routes = [
 
   { path: 'user', component: UserProfileComponent },
 
-  { path: 'signup', component: SignupComponent },
+  { path: 'sign-up', component: SignUpComponent},
+
+  //{ path: 'form', component: MyFormComponent},
+
+  {
+    path: '',
+    redirectTo: '/user',
+    pathMatch: 'full'
+  },
+ 
 ];
 
 export { ROUTES };

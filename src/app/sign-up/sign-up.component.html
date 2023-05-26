@@ -1,0 +1,49 @@
+<p>sign-up works!</p>
+
+
+<form #signUp="ngForm" (ngSubmit)="onSubmit()">
+
+    <fieldset>
+        <label for="email-user" >Email *</label>
+        <input id="email-user" name="email-user" type="email" [(ngModel)]="model.contact" #contact="ngModel" placeholder="Email" required email>
+
+        <div *ngIf="contact.errors">
+            <span *ngIf="signUp.submitted && contact.errors?.['required']">L'email est requis</span>
+            <span *ngIf="signUp.submitted && contact.errors?.['email']" >L'email est invalide</span>
+        </div>
+
+    </fieldset>
+
+    <fieldset>
+        <label for="firstname-user">Prénom *</label>
+        <input id="firstname-user" name="firstname-user" type="text" [(ngModel)]="model.firstname" #firstname="ngModel" required minlength="3" maxlength="15" placeholder="Prénom">
+    
+
+        <div *ngIf="firstname.errors">
+            <span *ngIf="signUp.submitted && firstname.errors?.['maxlength']">Le champ "Prénom" ne  doit pas dépasser 15 caractères.</span>
+            <span *ngIf="signUp.submitted && firstname.errors?.['minlength']">Le champ "Prénom" doit comporter au moins 3 caractères.</span>
+            <span *ngIf="signUp.submitted && firstname.errors?.['required']">Le champ "Prénom" est  requis</span>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <label for="lastname-user">Nom *</label>
+        <input id="lastname-user" name="lastname-user" type="text" [(ngModel)]="model.lastname" #lastname="ngModel" required minlength="3" maxlength="15" placeholder="Nom">
+
+        <div *ngIf="lastname.errors">
+            <span *ngIf="signUp.submitted && lastname.errors?.['maxlength']">Le champ "Nom" ne  doit pas dépasser 15 caractères.</span>
+            <span *ngIf="signUp.submitted && lastname.errors?.['minlength']">Le champ "Nom" doit comporter au moins 3 caractères.</span>
+            <span *ngIf="signUp.submitted && lastname.errors?.['required']">Le champ "Nom" est  requis</span>
+        </div>
+
+    </fieldset>
+
+    <fieldset>
+        <label for="password-user">Mot de passe</label>
+        <input id="password-user" name="password-user" type="password" [(ngModel)]="model.password" #password="ngModel" placeholder="Password">
+    </fieldset>
+  
+    <button type="reset">Restaurer</button>
+    <button type="submit">Sauvegarder</button>
+
+</form>

@@ -15,8 +15,9 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 
 import { ROUTES } from './app-routing.module';
-import { SignupComponent } from './signup/signup.component';
 import { MenuComponent } from './menu/menu.component';
+import { MyFormComponent } from './my-form/my-form.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,10 @@ import { MenuComponent } from './menu/menu.component';
     UserProfileComponent,
     HomeComponent,
     ContactComponent,
-    SignupComponent,
-    MenuComponent
+    SignUpComponent,
+    MenuComponent,
+    MyFormComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
